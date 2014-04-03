@@ -463,7 +463,7 @@ noh.Element.prototype.attr = function(name, value) {
  * Applies the css style (just a convenient shortcut for typical jQuery method invocation)
  * @see http://api.jquery.com/css/#css2
  * @param {string} name CSS property name
- * @param {string} value CSS property value
+ * @param {string|number} value CSS property value
  * @return {!noh.Element} this (for chaining)
  */
 noh.Element.prototype.css = function(name, value) {
