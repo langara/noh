@@ -1,18 +1,17 @@
-// [ vim: set tabstop=2 shiftwidth=2 expandtab : ] 
+// [ vim: set tabstop=2 shiftwidth=2 expandtab : ]
 
-/**                                           
+/**
  * @author marek.langiewicz@gmail.com (Marek Langiewicz)
  * @fileoverview
  * This file contains NOH library tests (written using NOH library itself)
  * You have to init NOH library with option: pollute:true, to use code from this file.
  * We use the {@link http://alexgorbatchev.com/SyntaxHighlighter/|SyntaxHighlighter}
  * to show some source code on the page.
- */                                        
+ */
 
-
-
-
-
+var jQuery = require('jquery');
+var $ = jQuery;
+var noh = require('./noh');
 
 /**
  * This function will insert tree with all tests to DOM element with id="noh_tests"

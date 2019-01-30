@@ -1,5 +1,5 @@
 var nohConfig = {
-    mode: 'development',
+    mode: 'production',
     entry: './noh.js',
     output: {
         path: __dirname,
@@ -25,4 +25,22 @@ var nohExampleConfig = {
     }
 }
 
-module.exports = [nohConfig, nohDocConfig, nohExampleConfig]
+var nohTestsConfig = {
+    mode: 'production',
+    entry: './noh_tests.js',
+    output: {
+        path: __dirname,
+        filename: 'noh_tests_bundle.js'
+    }
+}
+
+var nohTestsDevConfig = {
+    mode: 'development',
+    entry: './noh_tests.js',
+    output: {
+        path: __dirname,
+        filename: 'noh_tests_dev_bundle.js'
+    }
+}
+
+module.exports = [nohConfig, nohDocConfig, nohExampleConfig, nohTestsConfig, nohTestsDevConfig]
