@@ -1,7 +1,7 @@
 NOH
 ===
 
-NO HTML library
+Prehistoric NO HTML library
 ---------------
 
 It allows to create the html documents dynamically in pure JavaScript (with almost no html code at all)

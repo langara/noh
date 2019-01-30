@@ -1,4 +1,8 @@
-// [ vim: set tabstop=2 shiftwidth=2 expandtab : ] 
+// [ vim: set tabstop=2 shiftwidth=2 expandtab : ]
+
+require('!style-loader!css-loader!./style.css');
+var jQuery = require('jquery');
+var $ = jQuery;
 
 /**                                           
  * @author marek.langiewicz@gmail.com (Marek Langiewicz)
@@ -1942,4 +1946,4 @@ noh.submenu = function(item, menu) {
   return submenu;
 };
 
-
+module.exports = noh

@@ -1,4 +1,8 @@
-// [ vim: set tabstop=2 shiftwidth=2 expandtab : ] 
+// [ vim: set tabstop=2 shiftwidth=2 expandtab : ]
+
+var jQuery = require('jquery');
+var $ = jQuery;
+var noh = require('./noh');
 
 /**                                           
  * @author marek.langiewicz@gmail.com (Marek Langiewicz)

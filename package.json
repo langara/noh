@@ -1,0 +1,38 @@
+{
+  "name": "noh",
+  "version": "1.0.0",
+  "description": "Prehistoric NO HTML library",
+  "main": "noh.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/langara/noh.git"
+  },
+  "keywords": [
+    "no",
+    "html",
+    "js",
+    "dom",
+    "jquery",
+    "browser",
+    "prehistoric"
+  ],
+  "author": "Marek Langiewicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/langara/noh/issues"
+  },
+  "homepage": "https://github.com/langara/noh#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}

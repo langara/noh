@@ -1,4 +1,8 @@
 
+var jQuery = require('jquery');
+var $ = jQuery;
+var noh = require('./noh');
+
 /** @param {...noh.AttrsAndNodes} var_args as always.. */
 var prettydiv = function(var_args) {
     var an = noh.organize(arguments);
