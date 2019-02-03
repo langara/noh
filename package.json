@@ -4,7 +4,7 @@
   "description": "Prehistoric NO HTML library",
   "main": "noh.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "google-closure-compiler --checks_only --process_common_js_modules --warning_level VERBOSE --js noh.js noh_tests.js"
   },
   "repository": {
     "type": "git",
