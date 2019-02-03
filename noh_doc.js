@@ -1,14 +1,14 @@
 // [ vim: set tabstop=2 shiftwidth=2 expandtab : ]
 
-var jQuery = require('jquery');
-var $ = jQuery;
-var noh = require('./noh');
-
-/**                                           
+/**
  * @author marek.langiewicz@gmail.com (Marek Langiewicz)
  * @fileoverview
  * This file contains NOH library documentation (written using NOH library itself)
  */
+
+var jQuery = require('jquery');
+var $ = jQuery;
+var noh = require('./noh');
 
 /**
  * This function will insert whole documentation tree to DOM element with id="noh_doc" (it it finds one).

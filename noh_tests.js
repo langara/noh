@@ -25,7 +25,7 @@ function noh_tests_init() {
   var tests = noh_tests();
   tests.attachToDOM(container[0]);
   if(window['SyntaxHighlighter'])
-    window['SyntaxHighlighter'].all(); // strange syntax to avoid closure compiler complainings
+    window['SyntaxHighlighter'].all(); // strange syntax to avoid closure compiler complains
       // (like: variable SyntaxHighlighter is undeclared)
 }
 

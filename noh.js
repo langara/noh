@@ -1,10 +1,6 @@
 // [ vim: set tabstop=2 shiftwidth=2 expandtab : ]
 
-require('!style-loader!css-loader!./style.css');
-var jQuery = require('jquery');
-var $ = jQuery;
-
-/**                                           
+/**
  * @author marek.langiewicz@gmail.com (Marek Langiewicz)
  * @fileoverview
  * <p>
@@ -54,6 +50,11 @@ var $ = jQuery;
  *     noh.p(noh.h4("Other header"),"Other content")
  * )
  */
+
+
+require('!style-loader!css-loader!./style.css');
+var jQuery = require('jquery');
+var $ = jQuery;
 
 
 /**
@@ -420,7 +421,7 @@ noh.Text = function(text) {
   this.$ = $(this.dom);
 };
 
-noh.Text.prototype = new noh.Node();
+noh.Text.prototype = Object.create(noh.Node.prototype);
 
 
 
@@ -449,7 +450,7 @@ noh.Element = function(tag, var_args) {
     this.add(an.nodes[i]);
 };
 
-noh.Element.prototype = new noh.Node();
+noh.Element.prototype = Object.create(noh.Node.prototype);
 
 /**
  * Sets an element's attribute
@@ -833,7 +834,7 @@ noh.Blind = function(var_args) {
   this.$.show(function() {this_.roll(this_.down());});
 };
 
-noh.Blind.prototype = new noh.Element("div");
+noh.Blind.prototype = Object.create(noh.Element.prototype);
 
 /**
  * Returns if the content is visible (down).
@@ -923,7 +924,7 @@ noh.OneOf = function(var_args) {
   this.selected_ = -1; 
 };
 
-noh.OneOf.prototype = new noh.Element("div");
+noh.OneOf.prototype = Object.create(noh.Element.prototype);
 
 /**
  * @return {number}
@@ -1017,7 +1018,7 @@ noh.details = function(var_args) {
  * @constructor
  * @extends {noh.Element}
  * @implements {noh.IOneOf}
- * TODO: it can change its size dynamicly so it should be inside some absolutely positioned block, for better performance.
+ * TODO: it can change its size dynamically so it should be inside some absolutely positioned block, for better performance.
  */
 noh.Reel = function(lines, width, height, var_args) {
   var an = noh.organize(arguments, 3);
@@ -1042,15 +1043,15 @@ noh.Reel = function(lines, width, height, var_args) {
   this.height = height;
   this.chksize();
 
+  this.selected_ = -1;
+
   var this_ = this;
   this.$.show(function() {
     this_.update();
   });
-  this.selected_ = -1;
 };
 
-noh.Reel.prototype = new noh.Element("div");
-
+noh.Reel.prototype = Object.create(noh.Element.prototype);
 /**
  * @return {number}
  */
@@ -1347,7 +1348,7 @@ noh.log.Little = function() {
   this.addclass('noh log little');
 };
 
-noh.log.Little.prototype = new noh.Element("div");
+noh.log.Little.prototype = Object.create(noh.Element.prototype);
 
 /**
 /**
@@ -1825,7 +1826,7 @@ noh.MenuItem = function(content) {
   this.on("click", function() { this.noh.toggle(); return false; });
 }
 
-noh.MenuItem.prototype = new noh.Element("div");
+noh.MenuItem.prototype = Object.create(noh.Element.prototype);
 
 /**
  * This method should be overriden if we want to add some new fuctionality when the state is changing;
@@ -1901,7 +1902,7 @@ noh.Menu = function(var_args) {
   this.selected_ = -1;
 };
 
-noh.Menu.prototype = new noh.Element("div");
+noh.Menu.prototype = Object.create(noh.Element.prototype);
 
 noh.Menu.prototype.selected = function() { return this.selected_; };
 
