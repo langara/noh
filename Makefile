@@ -1,3 +1,6 @@
+
+# WARINING: This is really old stuff :) Do not use it!
+
 OUT = \
 	noh_doc_min1.js \
 	noh_doc_min2.js \

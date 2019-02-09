@@ -4,7 +4,9 @@
   "description": "Prehistoric NO HTML library",
   "main": "noh.js",
   "scripts": {
-    "check": "google-closure-compiler --checks_only --process_common_js_modules --module_resolution NODE --warning_level VERBOSE --externs ./src/jquery-3.3-externs.js --js ./src/noh_tests.js package.json"
+    "check": "google-closure-compiler --checks_only --process_common_js_modules --module_resolution NODE --warning_level VERBOSE --externs ./src/jquery-3.3-externs.js --js ./src/noh_tests.js package.json",
+    "build": "webpack",
+    "start": "webpack-dev-server --entry ./src/noh_tests.js --output-filename ./dist/noh_tests_dev.js --open-page ./noh_tests.html"
   },
   "repository": {
     "type": "git",
@@ -32,8 +34,8 @@
     "css-loader": "^2.1.0",
     "google-closure-compiler": "^20190121.0.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
   }
 }

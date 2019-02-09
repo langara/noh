@@ -52,7 +52,7 @@
  */
 
 
-require('!style-loader!css-loader!./style.css');
+require('./style.css');
 var jQuery = require('jquery');
 var $ = jQuery;
 
