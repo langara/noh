@@ -4,7 +4,7 @@
   "description": "Prehistoric NO HTML library",
   "main": "noh.js",
   "scripts": {
-    "check": "google-closure-compiler --checks_only --process_common_js_modules --warning_level VERBOSE --js noh.js noh_tests.js"
+    "check": "google-closure-compiler --checks_only --process_common_js_modules --module_resolution NODE --warning_level VERBOSE --externs ./src/jquery-3.3-externs.js --js ./src/noh_tests.js package.json"
   },
   "repository": {
     "type": "git",

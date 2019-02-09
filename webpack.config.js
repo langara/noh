@@ -1,46 +1,48 @@
+var path = require('path');
+
 var nohConfig = {
     mode: 'production',
-    entry: './noh.js',
+    entry: './src/noh.js',
     output: {
-        path: __dirname,
-        filename: 'noh_bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'noh.js'
     }
-}
+};
 
 var nohDocConfig = {
     mode: 'development',
-    entry: './noh_doc.js',
+    entry: './src/noh_doc.js',
     output: {
-        path: __dirname,
-        filename: 'noh_doc_bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'noh_doc.js'
     }
-}
+};
 
 var nohExampleConfig = {
     mode: 'development',
-    entry: './noh_example.js',
+    entry: './src/noh_example.js',
     output: {
-        path: __dirname,
-        filename: 'noh_example_bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'noh_example.js'
     }
-}
+};
 
 var nohTestsConfig = {
     mode: 'production',
-    entry: './noh_tests.js',
+    entry: './src/noh_tests.js',
     output: {
-        path: __dirname,
-        filename: 'noh_tests_bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'noh_tests.js'
     }
-}
+};
 
 var nohTestsDevConfig = {
     mode: 'development',
-    entry: './noh_tests.js',
+    entry: './src/noh_tests.js',
     output: {
-        path: __dirname,
-        filename: 'noh_tests_dev_bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'noh_tests_dev.js'
     }
-}
+};
 
-module.exports = [nohConfig, nohDocConfig, nohExampleConfig, nohTestsConfig, nohTestsDevConfig]
+module.exports = [nohConfig, nohDocConfig, nohExampleConfig, nohTestsConfig, nohTestsDevConfig];
