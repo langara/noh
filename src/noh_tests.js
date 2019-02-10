@@ -20,7 +20,7 @@ var noh = require('./noh.js');
  */
 function noh_tests_init() {
   var container = $('#noh_tests');
-  if(container.length == 0)
+  if(container.length === 0)
     return;
   var tests = noh_tests();
   tests.attachToDOM(container[0]);
@@ -29,7 +29,7 @@ function noh_tests_init() {
   //     // (like: variable SyntaxHighlighter is undeclared)
 }
 
-$(document).ready(noh_tests_init);
+$(noh_tests_init);
 
 
 
@@ -93,8 +93,7 @@ function runstests(stests) {
       noh.dt(noh.fancy(noh.h3({id:"stest_" + t}, "stest: ", t))).css("padding", "20px"),
       noh.dd(runstest(stests[t]))
     );
-  var runtests = noh.dl(testsres);
-  return runtests;
+    return noh.dl(testsres);
 }
 
 function stests_toc(stests) {
@@ -117,7 +116,7 @@ function noh_tests() {
     stests_toc(tests),
     runstests(tests)
   );
-};
+}
 
 
 
@@ -390,7 +389,7 @@ function reelnr(min, max) {
     while(s.length < width)
       s = '0' + s;
     return s;
-  }
+  };
   var elements = [];
   var style = {style:"font-family: monospace; margin: 5px; padding: 15px; border: solid black; color: black; font-size: large; width: 100; background: wheat"};
   for(var i = min; i <=max; ++i)
@@ -415,9 +414,9 @@ tests.reel_crazy = function() {
     var watch = noh.table1r(noh.td(number1), noh.td(number2), noh.td(number3));
     watch.tick = function() {
       number3.rotate(-1);
-      if(number3.rotation == 0) {
+      if(number3.rotation === 0) {
         number2.rotate(-1);
-        if(number2.rotation == 0)
+        if(number2.rotation === 0)
           number1.rotate(-1);
       }
     };
@@ -446,7 +445,7 @@ tests.reel_crazy = function() {
   obj.start = function(speed) {
     obj.stop();
     obj.intervalId = window.setInterval(function() { obj.tick(); }, speed);
-  }
+  };
 
   var objtest = noh.objtest(obj, reel_commands.concat('obj.start(200)', 'obj.stop()'));
   obj.parent.addclass("smooth");
@@ -537,7 +536,7 @@ function install_logger(logger) {
 
   ).install();
 
-};
+}
 
 
 tests.log_install = function() {
