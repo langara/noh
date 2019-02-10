@@ -239,7 +239,7 @@ noh.arr.push = function(arrIn, arrOut) {
  */
 noh.arr.indexOf = function(val, arr) {
   for(var x = 0; x < arr.length; ++x)
-    if(val == arr[x])
+    if(val === arr[x])
       return x;
   return -1;
 };
@@ -284,13 +284,13 @@ noh.arr.obj2arr = function(records, obj) {
  * @return {boolean} True if arr is an array like object
  */
 noh.arr.isArrayLike = function(arr) {
-  if(arr == undefined) return false;
-  if(arr == null) return false;
+  if(arr === undefined) return false;
+  if(arr === null) return false;
   if(arr instanceof jQuery) return true;
   if(jQuery.isArray(arr)) return true;
   var len = arr.length;
   if(typeof(len) !== "number") return false;
-  if(len == 0) return true;
+  if(len === 0) return true;
   if(len < 0) return false;
   var hasOwn = Object.prototype.hasOwnProperty;
   if(!hasOwn.call(arr, 0)) return false;
@@ -497,16 +497,16 @@ noh.Element.prototype.on = function(events, handler) {
 noh.Element.prototype.addclass = function(aclass) {
   this.$.addClass(aclass);
   return this;
-}
+};
 
 noh.Element.prototype.hasclass = function(aclass) {
   return this.$.hasClass(aclass);
-}
+};
 
 noh.Element.prototype.toggleclass = function(aclass) {
   this.$.toggleClass(aclass);
   return this;
-}
+};
 
 
 
@@ -519,7 +519,7 @@ noh.Element.prototype.toggleclass = function(aclass) {
 noh.Element.prototype.remclass = function(aclass) {
   this.$.removeClass(aclass);
   return this;
-}
+};
 
 
 
@@ -542,7 +542,7 @@ noh.scroll = function(offset, opt_duration) {
 noh.Element.prototype.scroll = function(opt_duration) {
   noh.scroll(this.$.offset().top, opt_duration);
   return this;
-}
+};
 
 
 /* 
@@ -771,7 +771,7 @@ noh.sleepy = function(element, opt_duration) {
     this.remclass("asleep").addclass("awake");
     window.clearTimeout(this.timeoutId_);
     var duration = opt_duration === undefined ? element.defaultAwakeTime_ : opt_duration;
-    var callback = function() { element.sleep(); }
+    var callback = function() { element.sleep(); };
     this.timeoutId_ = window.setTimeout(callback, duration);
   };
 
@@ -945,10 +945,10 @@ noh.OneOf.prototype.select = function(idx) {
   if((idx < -1) || (idx >= l))
     idx = -1;
 
-  if(this.selected_ != -1)
+  if(this.selected_ !== -1)
     this[this.selected_].roll(false);
 
-  if(idx != -1)
+  if(idx !== -1)
     this[idx].roll(true);
 
   this.selected_ = idx;
@@ -1066,13 +1066,13 @@ noh.Reel.prototype.select = function(nr) {
   if((nr < -1) || (nr >= this.length))
     nr = -1;
 
-  if(this.selected_ == nr)
+  if(this.selected_ === nr)
     return this;
 
-  if(this.selected_ != -1)
+  if(this.selected_ !== -1)
     this.getelem(this.selected_).remclass("selected");
 
-  if(nr != -1)
+  if(nr !== -1)
     this.getelem(nr).addclass("selected");
 
   this.selected_ = nr;
@@ -1087,14 +1087,14 @@ noh.Reel.prototype.chksize = function() {
   var size = 0;
   var maxsize = 0;
   var esize = 0;
-  if(this.width == "automatic") {
+  if(this.width === "automatic") {
     for(var i = 0; i < this.length; ++i) {
       esize = this[i].$.width();
       if(esize > size)
         size = esize;
     }
   }
-  else if(this.width == "dynamic") {
+  else if(this.width === "dynamic") {
     for(var i = 0; i < this.lines; ++i) {
       esize = this.getelem(i).$.width();
       if(esize > size)
@@ -1107,7 +1107,7 @@ noh.Reel.prototype.chksize = function() {
   this.exactwidth_ = size;
 
   size = 0;
-  if(this.height == "automatic") {
+  if(this.height === "automatic") {
     for(var i = 0; i < this.length; ++i) {
       esize = this[i].$.height();
       if(esize > size)
@@ -1115,7 +1115,7 @@ noh.Reel.prototype.chksize = function() {
     }
     size *= this.lines;
   }
-  else if(this.height == "dynamic") {
+  else if(this.height === "dynamic") {
     for(var i = 0; i < this.lines; ++i) {
       esize = this.getelem(i).$.height();
       if(esize > size)
@@ -1179,7 +1179,7 @@ noh.Reel.prototype.update = function(opt_lines) {
       element.css("top", "" + ((this.length-i-1) * this.exactheight_ / (this.length-this.lines)) + "px");
     }
   }
-  if(this.selected_ != -1)
+  if(this.selected_ !== -1)
     this.getelem(this.selected_).addclass("selected");
   return this;
 };
@@ -1213,7 +1213,7 @@ noh.Reel.prototype.spin = function(count, opt_random, opt_time) {
   var time = opt_time ? opt_time : 200;
   var this_ = this;
   var callback = function() {
-    if(count == 0) {
+    if(count === 0) {
       window.clearInterval(this_.intervalId_);
       this_.intervalId_ = undefined;
     }
@@ -1259,17 +1259,17 @@ noh.FancyOptions;
  */
 noh.fancy = function(element, opt_options) {
   element.addclass("fancy");
-  if(noh.arr.indexOf(element.tag, ["h1", "h2", "h3", "h4"]) != -1) {
+  if(noh.arr.indexOf(element.tag, ["h1", "h2", "h3", "h4"]) !== -1) {
     element.on("click", function() { this.noh.scroll(); });
   }
-  else if(element.tag == "a") {
+  else if(element.tag === "a") {
     var href = element.$.attr("href");
-    if(href && href.length > 0 && href[0] == "#") {
+    if(href && href.length > 0 && href[0] === "#") {
       element.on("click", function() { noh.scroll($($(this).attr("href")).offset().top) });
     }
   }
   return element;
-}
+};
 
 
 /**
@@ -1287,7 +1287,7 @@ noh.ukbd = function(atext) {
       return " " + word + " ";
   });
   return noh.kbd(map);
-}
+};
 
 
 
@@ -1723,7 +1723,7 @@ noh.cmdline = function(len, opt_placeholder) {
   };
 
   input.on("keypress", function(e) {
-    if(e.which == 13)
+    if(e.which === 13)
       cmdline.run();
   });
   enter.on("click", function() {
@@ -1764,7 +1764,7 @@ noh.objtest = function(obj, commands) {
     noh.p(cmdline),
     noh.p(buttons)
   );
-}
+};
 
 
 
@@ -1824,7 +1824,7 @@ noh.ISelectable.prototype.toggle = function() {};
 noh.MenuItem = function(content) {
   noh.Element.call(this, "div", {"class": "noh menu item"}, content);
   this.on("click", function() { this.noh.toggle(); return false; });
-}
+};
 
 noh.MenuItem.prototype = Object.create(noh.Element.prototype);
 
@@ -1850,7 +1850,7 @@ noh.menuitem = function(content) { return new noh.MenuItem(content); };
  * TODO: change to new class BigMenuItem - for better performance and consistency
  */
 noh.bigmenuitem = function(item, payload) {
-  var oneof = noh.oneof(payload)
+  var oneof = noh.oneof(payload);
   var bigmenuitem = noh.div(
     noh.div(item),
     noh.div(oneof)
@@ -1908,14 +1908,14 @@ noh.Menu.prototype.selected = function() { return this.selected_; };
 
 noh.Menu.prototype.select = function(idx) {
 
-  if(this.selected_ != -1)
+  if(this.selected_ !== -1)
     this.items_[this.selected_].toggle_orig_(); // deselects old item
 
   //TODO: check the idx value in DEBUG mode (check the @define in closure compiler) (make sure it is removed completely in release mode)
 
   this.selected_ = idx;
 
-  if(idx == -1)
+  if(idx === -1)
     return this;
 
   this.items_[idx].toggle_orig_(); //selects new item
@@ -1947,4 +1947,4 @@ noh.submenu = function(item, menu) {
   return submenu;
 };
 
-module.exports = noh
+module.exports = { noh: noh };
