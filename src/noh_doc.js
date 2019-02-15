@@ -8,7 +8,7 @@
 
 var jQuery = require('jquery');
 var $ = jQuery;
-var noh = require('./noh.js').noh;
+var noh = require('./noh.js');
 
 /**
  * This function will insert whole documentation tree to DOM element with id="noh_doc" (it it finds one).

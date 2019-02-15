@@ -1947,4 +1947,4 @@ noh.submenu = function(item, menu) {
   return submenu;
 };
 
-module.exports = { noh: noh };
+module.exports = noh;

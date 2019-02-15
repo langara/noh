@@ -1,8 +1,8 @@
 {
   "name": "noh.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Prehistoric NO HTML library",
-  "browser": "dist/noh.js",
+  "main": "dist/noh.js",
   "scripts": {
     "check": "google-closure-compiler --checks_only --process_common_js_modules --module_resolution NODE --warning_level VERBOSE --externs ./src/jquery-3.3-externs.js --js ./src/noh_tests.js package.json",
     "build": "webpack",

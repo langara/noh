@@ -1,7 +1,7 @@
 
 var jQuery = require('jquery');
 var $ = jQuery;
-var noh = require('./noh.js').noh;
+var noh = require('./noh.js');
 
 /** @param {...noh.AttrsAndNodes} var_args as always.. */
 var prettydiv = function(var_args) {

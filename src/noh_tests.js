@@ -11,7 +11,7 @@
 
 var jQuery = require('jquery');
 var $ = jQuery;
-var noh = require('./noh.js').noh;
+var noh = require('./noh.js');
 
 /**
  * This function will insert tree with all tests to DOM element with id="noh_tests"
