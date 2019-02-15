@@ -12,7 +12,7 @@ var rules = [
 var nohConfig = {
     mode: 'production',
     entry: './src/noh.js',
-    output: { path: distpath, filename: 'noh.js' },
+    output: { path: distpath, filename: 'noh.js', library: "noh.js", libraryTarget: "umd" },
     module: { rules: rules }
 };
 

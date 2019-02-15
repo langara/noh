@@ -1,6 +1,6 @@
 {
   "name": "noh.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Prehistoric NO HTML library",
   "main": "dist/noh.js",
   "scripts": {
